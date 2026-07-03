@@ -1,23 +1,15 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import {
-  Plus,
   Search,
-  MoreVertical,
   MoreHorizontal,
   RefreshCw,
   Trash2,
   X,
   ShieldCheck,
   ExternalLink,
-  Lock,
   Loader2,
-  User,
   Check,
-  AlertCircle,
-  HelpCircle,
-  Settings,
-  Grid,
-  Link2
+  Settings
 } from 'lucide-react'
 import { PageHeader } from '../components/layout/PageHeader'
 import type { BreadcrumbItem } from '../components/layout/Breadcrumb'

@@ -3,11 +3,49 @@ import { AppShell } from '../layouts/AppShell'
 import { ShellDemoPage } from '../pages/ShellDemoPage'
 import { CreatePostPage } from '../pages/CreatePostPage'
 import { ConnectedAccountsPage } from '../pages/ConnectedAccountsPage'
+import { LoginPage } from '../pages/auth/LoginPage'
+import { RegisterPage } from '../pages/auth/RegisterPage'
+import { ForgotPasswordPage } from '../pages/auth/ForgotPasswordPage'
+import { ResetPasswordPage } from '../pages/auth/ResetPasswordPage'
+import {
+  EmailVerificationPendingPage,
+  EmailVerificationSuccessPage,
+} from '../pages/auth/EmailVerificationPages'
+
+import { ProtectedRoute } from '../components/auth/ProtectedRoute'
 
 export const router = createBrowserRouter([
   {
+    path: '/login',
+    element: <LoginPage />,
+  },
+  {
+    path: '/register',
+    element: <RegisterPage />,
+  },
+  {
+    path: '/forgot-password',
+    element: <ForgotPasswordPage />,
+  },
+  {
+    path: '/reset-password',
+    element: <ResetPasswordPage />,
+  },
+  {
+    path: '/verify-email-pending',
+    element: <EmailVerificationPendingPage />,
+  },
+  {
+    path: '/verify-email-success',
+    element: <EmailVerificationSuccessPage />,
+  },
+  {
     path: '/',
-    element: <AppShell />,
+    element: (
+      <ProtectedRoute>
+        <AppShell />
+      </ProtectedRoute>
+    ),
     children: [
       {
         index: true,
