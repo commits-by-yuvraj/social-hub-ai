@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import { AppShell } from '../layouts/AppShell'
 import { ShellDemoPage } from '../pages/ShellDemoPage'
 import { CreatePostPage } from '../pages/CreatePostPage'
+import { ConnectedAccountsPage } from '../pages/ConnectedAccountsPage'
 
 export const router = createBrowserRouter([
   {
@@ -38,7 +39,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'accounts',
-        element: <ShellDemoPage title="Connected Accounts" />,
+        element: <ConnectedAccountsPage />,
       },
       {
         path: 'team',
